@@ -4,6 +4,8 @@
   "description": "I am trying to learn React.js for the first time and i am loving it. This love should light me to learn this in 2 weeks prolly.",
   
   "scripts": {
+    "start":"parcel Index.html",
+    "build":"parcel build Index.html",
     "test": "jest"
   },
   "keywords": [
