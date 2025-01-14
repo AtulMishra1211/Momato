@@ -1,44 +1,4 @@
 
-
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header =(props) => {
-   return (
-    <div className = "header">
-    <div className = "logoContainer">
-        <img className="logo" src ="https://chatgpt.com/c/6779478c-b2ac-8004-8c7b-73c516ffab03https://cdn.openai.com/labs/images/An%20armchair%20in%20the%20shape%20of%20an%20avocado.webp?v=1"/> 
-    </div>
-    <div className ="nav-items">
-        <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact us</li>
-        <li>Cart</li>
-        </ul>
-    </div>
-    </div>
-   )
-}
-
- 
-const RestaurantCard =(props)=>{
-    const {resData} = props;
-
-    const {name, cuisines, locality, areaName, avgRating,cloudinaryImageId} = resData?.info;     //why '?' -> optional chaining
-    const{deliveryTime} = resData?.info.sla;
-    return(
-        <div className="res-card">
-            <img className="res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+ cloudinaryImageId} ></img>
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{deliveryTime} minutes</h4>
-            <h4>{locality}, {areaName}</h4>
-            <h4>{avgRating} Star </h4>
-        </div>
-    )
-}   
-
 const resArr = [
     {
       info: {
@@ -1463,30 +1423,4 @@ const resArr = [
     },
   ];
 
-
-
-const Body =()=>{
-    return(
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-            {/* we are using map below for looping through */}
-            {resArr.map((restaurant)=>(
-                <RestaurantCard key={restaurant.info.id} resData = {restaurant}/>
-                ))}
-            
-            </div>
-        </div>
-    )
-}
-const AppLayout =()=> {
-    return (<div className="app">
-    <Header/>
-    <Body />
-    </div>
-    );
-    
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />)
+export default resArr;
