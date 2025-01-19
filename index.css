@@ -20,8 +20,8 @@ margin: 10 px;
 .res-card{
     margin: 5px;
     width: 225px;
-   
-    background-color: #f4ad6a;
+    font-size:15px;
+    background-color: #e1dedc;
     padding: 5px;
 }
 .res-card:hover{
@@ -43,4 +43,17 @@ margin: 10 px;
     margin:10px;
     cursor: pointer;
 
+}
+.shimmer-container{
+display: flex;
+flex-wrap: wrap;
+}
+.shimmer-card{
+    margin:20px;
+    height : 300px;
+    width:200px;
+    background-color:#dedad7;
+}
+.login{
+    margin:10px;
 }
