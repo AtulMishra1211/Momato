@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel Index.html",
     "build": "parcel build Index.html",
-    "test": "jest"
+    "test": "jest",
+    "type": "module"
   },
   "keywords": [
     "Atul",
@@ -17,12 +18,17 @@
   "author": "Atul Mishra",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.12.0",
+    "parcel": "^2.13.3",
     "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.2"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "Momato"
   }
 }
