@@ -61,3 +61,8 @@ flex-wrap: wrap;
     display:flex;
     flex-wrap: wrap;
 }
+.userCard{
+    padding: 10px;
+    border : 1px solid black;
+    background-color: #f2c09e
+}
