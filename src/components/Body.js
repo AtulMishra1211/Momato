@@ -49,7 +49,6 @@ if(onlineStatus==false) {
               <div className="search">
                 <input type="text" className="search-box" value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}></input>
                 <button onClick={()=>{
-                  console.log({searchText})
                   const filteredRestaurants = listOfRestaurants.filter(
                     (res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase())
                   );
