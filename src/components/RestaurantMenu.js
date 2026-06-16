@@ -9,18 +9,18 @@ const RestaurantMenu =()=>{
 
 //     const {resId} = useParams();
 //     const resInfo = useRestaurantMenu(resId);
-//     // useEffect(()=>{
-//     //     fetchMenu();
-//     // },[])
+    // useEffect(()=>{
+    //     fetchMenu();
+    // },[])
 
-//     // const fetchMenu = async()=>{
-//     //     const data = await fetch (MENU_API+resId);
+    // const fetchMenu = async()=>{
+    //     const data = await fetch (MENU_API+resId);
         
-//     //     const json = await data.json();
-//     //     console.log(json);
-//     //     setResinfo(json.data);
+    //     const json = await data.json();
+    //     console.log(json);
+    //     setResinfo(json.data);
         
-//     // }
+    // }
 //     if(resInfo === null) return <Shimmer/>
 
 //    const {name, cuisines, cloudinaryImageId, costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;

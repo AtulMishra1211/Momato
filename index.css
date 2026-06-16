@@ -61,8 +61,79 @@ flex-wrap: wrap;
     display:flex;
     flex-wrap: wrap;
 }
-.userCard{
-    padding: 10px;
-    border : 1px solid black;
-    background-color: #f2c09e
+
+/* Replace your existing .userCard with this */
+.userCard {
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: 0.5px solid #AFA9EC;
+    background: #EEEDFE;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Add these new helpers for the About page */
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #534AB7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #EEEDFE;
+    flex-shrink: 0;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #3C3489;
+}
+
+.user-location {
+    font-size: 13px;
+    color: #534AB7;
+    margin-top: 2px;
+}
+
+.user-avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.user-contact {
+    font-size: 13px;
+    color: #534AB7;
+    margin-top: 4px;
+}
+
+.about-wrapper {
+    max-width: 480px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 0.5px solid #d3d1c7;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888780;
+}
+
+.about-title {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0.4rem 0 1.25rem 0;
 }
