@@ -148,3 +148,9 @@ flex-wrap: wrap;
     color: #1a1a1a;
     margin: 0.4rem 0 1.25rem 0;
 }
+
+.input{
+    padding: 5px;
+    margin-top: 4px;
+
+}

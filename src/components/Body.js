@@ -1,9 +1,10 @@
-import { useState } from "react";
-import {useEffect} from "react";
+import { useContext, useState } from "react";
+import {useEffect, useState} from "react";
 import RestaurantCard, {withPromotedlabel} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body =()=>{
     const[listOfRestaurants, setListOfRestaurants]= useState([]);
@@ -11,6 +12,10 @@ const Body =()=>{
    const[searchText, setSearchText]= useState("")
 
     const RestaurantCardPromoted = withPromotedlabel(RestaurantCard);  //HOC
+    
+    
+    const {loggedInUser, setUserName} = useContext(UserContext);
+
 
 
 //wheneveer a state variable is updated, react re renders the component(triggers the reconciliation cycle)
@@ -48,7 +53,7 @@ if(onlineStatus==false) {
      <Shimmer/>
   ): (
         <div className="body">
-            <div className="filter">
+            <div className="filter ">
               <div className="search">
                 <input type="text" className="search-box" value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}></input>
                 <button onClick={()=>{
@@ -72,8 +77,15 @@ if(onlineStatus==false) {
                 Top Rated Restaurants
                 
             </button>
-            
+             <div className="input">
+                User: <input type="text" value={loggedInUser} onChange={(e)=>{
+                  setUserName(e.target.value)
+                }}></input>
+              </div>
             </div>
+
+           
+
             <div className="res-container">
             {/* we are using map below for looping through */}
             {filteredRestaurants.map((restaurant)=>(
