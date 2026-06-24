@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {useEffect} from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedlabel} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -9,6 +9,10 @@ const Body =()=>{
     const[listOfRestaurants, setListOfRestaurants]= useState([]);
     const[filteredRestaurants, setFilteredRestaurants]= useState([]);
    const[searchText, setSearchText]= useState("")
+
+    const RestaurantCardPromoted = withPromotedlabel(RestaurantCard);  //HOC
+
+
 //wheneveer a state variable is updated, react re renders the component(triggers the reconciliation cycle)
    console.log("body rendered")
 
@@ -25,7 +29,6 @@ const Body =()=>{
             const json = await data.json();
             // console.log("here")
             
-          //  console.log( json);
             setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
             setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
@@ -53,8 +56,10 @@ if(onlineStatus==false) {
                     (res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase())
                   );
                   setFilteredRestaurants(filteredRestaurants);
+                  
                 }}>Search</button>
               </div>
+              
             <button   
             className="filter-btn"
             onClick={()=>{
@@ -65,13 +70,25 @@ if(onlineStatus==false) {
                 }}
             >
                 Top Rated Restaurants
+                
             </button>
+            
             </div>
             <div className="res-container">
             {/* we are using map below for looping through */}
             {filteredRestaurants.map((restaurant)=>(
-                <Link key={restaurant.info.id} to= {"/restaurants/" + restaurant.info.id}> <RestaurantCard resData = {restaurant}/></Link>
+                <Link key={restaurant.info.id} to= {"/restaurants/" + restaurant.info.id}>
+                  
+                  {/* that when there is a promoted label I will pass HOC otherwise normal**/}
+                  
+                  {restaurant.info.veg?<RestaurantCardPromoted resData = {restaurant}/> : <RestaurantCard resData = {restaurant}/>}
+                  
+                </Link>
+                  
+
+                   
                 ))}
+                
             
             </div>
         </div>
