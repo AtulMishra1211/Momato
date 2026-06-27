@@ -12,7 +12,7 @@ const Body =()=>{
    const[searchText, setSearchText]= useState("")
 
     const RestaurantCardPromoted = withPromotedlabel(RestaurantCard);  //HOC
-    
+
     
     const {loggedInUser, setUserName} = useContext(UserContext);
 
@@ -103,6 +103,7 @@ if(onlineStatus==false) {
                 
             
             </div>
+            
         </div>
     )
 }

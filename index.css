@@ -1,156 +1,968 @@
-.header{
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, "Segoe UI", sans-serif;
+    background: #f7f7f7;
+    color: #282c3f;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================
+            HEADER
+========================== */
+
+.header {
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
-    text-decoration: none;
+    align-items: center;
+    padding: 0 50px;
+    height: 90px;
 
-}
-.logo{
-    width: 200px;
-}
-.nav-items>ul{
-font-size:24px;
-display: flex;
-list-style-type: none;
-}
-.nav-items>ul>li{
-padding: 10px;
-margin: 10 px;
+    background: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.res-card{
-    margin: 5px;
-    width: 225px;
-    font-size:15px;
-    background-color: #e1dedc;
-    padding: 5px;
-    text-decoration: none;
-    color:black;
-}
-.res-card:hover{
+.logo {
+    width: 140px;
     cursor: pointer;
-    border:1px solid black;
+    transition: .3s;
+}
 
+.logo:hover {
+    transform: scale(1.05);
 }
-.res-logo{
-    width: 100%;
-    height: 50%;
-}
-.search{
-    padding: 10px;
-}
-.res-container{
+
+/* ==========================
+        NAVIGATION
+========================== */
+
+.nav-items ul {
     display: flex;
-    flex-wrap: wrap;
-        text-decoration: none;
-
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+    font-size: 18px;
+    font-weight: 500;
 }
-.res-card-veg{
-    position: absolute;
-    background-color: black;
-    padding: 5px;
-    margin: 5px;
+
+.nav-items li {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-items li:hover {
+    color: #ff5200;
+}
+
+/* ==========================
+        LOGIN BUTTON
+========================== */
+
+.login {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #ff5200;
     color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s;
 }
-.filter-btn{
-    margin:10px;
+
+.login:hover {
+    background: #e64a00;
+}
+
+/* ==========================
+            FILTER
+========================== */
+
+.filter {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 30px 40px;
+}
+
+/* ==========================
+        SEARCH BAR
+========================== */
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search input {
+    width: 280px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.search input:focus {
+    border-color: #ff5200;
+}
+
+.search button {
+    border: none;
+    background: #ff5200;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.search button:hover {
+    background: #e64a00;
+}
+
+/* ==========================
+        FILTER BUTTON
+========================== */
+
+.filter-btn {
+    border: none;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 12px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background: #ff5200;
+    color: white;
+    border-color: #ff5200;
+}
+
+/* ==========================
+    RESTAURANT CONTAINER
+========================== */
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px 30px 40px;
+}
+
+/* ==========================
+    RESTAURANT CARD
+========================== */
+
+.res-card {
+
+    width: 260px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
     cursor: pointer;
 
-}
-.shimmer-container{
-display: flex;
-flex-wrap: wrap;
-}
-.shimmer-card{
-    margin:20px;
-    height : 300px;
-    width:200px;
-    background-color:#dedad7;
-}
-.login{
-    margin:10px;
-}
-.filter{
-    display:flex;
-    flex-wrap: wrap;
+    transition: .25s;
+
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
 }
 
-.userCard {
-    padding: 1.25rem 1.5rem;
-    border-radius: 12px;
-    border: 0.5px solid #AFA9EC;
-    background: #EEEDFE;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.res-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 28px rgba(0,0,0,.15);
 }
 
-.user-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #534AB7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 500;
-    color: #EEEDFE;
-    flex-shrink: 0;
-}
+.res-logo {
 
-.user-name {
-    font-size: 16px;
-    font-weight: 500;
-    color: #3C3489;
-}
+    width: 100%;
 
-.user-location {
-    font-size: 13px;
-    color: #534AB7;
-    margin-top: 2px;
-}
+    height: 180px;
 
-.user-avatar-img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0;
 }
 
-.user-contact {
-    font-size: 13px;
-    color: #534AB7;
-    margin-top: 4px;
+.res-card h3 {
+
+    margin: 14px 14px 8px;
+
+    font-size: 21px;
 }
+
+.res-card h4 {
+
+    margin: 6px 14px;
+
+    color: #666;
+
+    font-size: 15px;
+
+    font-weight: 400;
+}
+
+.res-card h4:last-child {
+
+    margin-bottom: 18px;
+}
+
+/* ==========================
+        VEG LABEL
+========================== */
+
+.res-card-veg {
+
+    position: absolute;
+
+    margin: 12px;
+
+    padding: 6px 12px;
+
+    background: #0f9d58;
+
+    color: white;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+/* ==========================
+        SHIMMER
+========================== */
+
+.shimmer-container {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.shimmer-card {
+
+    width: 260px;
+
+    height: 320px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        90deg,
+        #ececec 25%,
+        #f5f5f5 37%,
+        #ececec 63%
+    );
+
+    background-size: 400% 100%;
+
+    animation: shimmer 1.3s infinite;
+}
+
+@keyframes shimmer {
+
+    from {
+        background-position: 100% 0;
+    }
+
+    to {
+        background-position: -100% 0;
+    }
+}
+
+/* ==========================
+        INPUT
+========================== */
+
+.input {
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ddd;
+
+    outline: none;
+}
+
+/* =====================================
+            MENU PAGE
+====================================== */
+
+.menu {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+/* Restaurant Details Card */
+
+.menu-header {
+    background: linear-gradient(135deg, #ff7e29, #ff5200);
+    color: white;
+    padding: 35px;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(255, 82, 0, .25);
+}
+
+.menu-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.menu-header p {
+    font-size: 16px;
+    margin-top: 8px;
+    opacity: .95;
+}
+
+/* Recommended Heading */
+
+.menu-title {
+    margin: 35px 0 20px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* List */
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Every Dish Card */
+
+.menu-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: white;
+
+    margin-bottom: 18px;
+
+    padding: 22px 25px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 4px 18px rgba(0,0,0,.08);
+
+    transition: .25s;
+}
+
+.menu-item:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 22px rgba(0,0,0,.12);
+}
+
+/* Left Side */
+
+.item-left {
+
+    width: 70%;
+}
+
+.item-left h3 {
+
+    font-size: 19px;
+
+    color: #222;
+
+    margin-bottom: 10px;
+}
+
+.item-price {
+
+    color: #ff5200;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+/* Right Side */
+
+.item-right {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+/* ADD Button */
+
+.add-btn {
+
+    background: white;
+
+    color: #1ba672;
+
+    border: 2px solid #1ba672;
+
+    width: 95px;
+
+    height: 42px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    transition: .25s;
+}
+
+.add-btn:hover {
+
+    background: #1ba672;
+
+    color: white;
+
+    transform: scale(1.05);
+}
+
+/* Future Quantity Button */
+
+.quantity-box {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 95px;
+
+    border: 2px solid #1ba672;
+
+    border-radius: 10px;
+
+    padding: 10px 12px;
+
+    font-weight: bold;
+
+    color: #1ba672;
+
+    background: white;
+}
+
+.quantity-box button {
+
+    border: none;
+
+    background: transparent;
+
+    color: #1ba672;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+/* Divider */
+
+.menu-divider {
+
+    margin: 30px 0;
+
+    border-top: 1px solid #ececec;
+}
+
+/* Category */
+
+.category-title {
+
+    font-size: 22px;
+
+    margin: 35px 0 20px;
+
+    font-weight: 600;
+
+    color: #3d4152;
+}
+
+/* Empty Menu */
+
+.empty-menu {
+
+    text-align: center;
+
+    margin-top: 60px;
+
+    color: #777;
+}
+
+/* Menu Animation */
+
+.menu-item {
+
+    animation: fadeIn .35s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+/* Nice Scrollbar */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #cfcfcf;
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #aaaaaa;
+}
+
+::-webkit-scrollbar-track {
+
+    background: #f7f7f7;
+}
+
+/* =====================================
+            ABOUT PAGE
+====================================== */
 
 .about-wrapper {
-    max-width: 480px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background: #ffffff;
-    border-radius: 16px;
-    border: 0.5px solid #d3d1c7;
+
+    max-width: 750px;
+
+    margin: 50px auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
 }
 
 .label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
+
+    color: #ff5200;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
     text-transform: uppercase;
-    color: #888780;
 }
 
 .about-title {
-    font-size: 22px;
-    font-weight: 500;
-    color: #1a1a1a;
-    margin: 0.4rem 0 1.25rem 0;
+
+    margin: 12px 0 30px;
+
+    font-size: 34px;
+
+    color: #282c3f;
+
+    font-weight: 700;
 }
 
-.input{
-    padding: 5px;
-    margin-top: 4px;
+/* =====================================
+            USER CARD
+====================================== */
 
+.userCard {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    margin-top: 20px;
+
+    background: #fff8f5;
+
+    border-radius: 16px;
+
+    border: 1px solid #ffe1d2;
+
+    transition: .3s;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.05);
+}
+
+.userCard:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,.10);
+}
+
+.user-avatar {
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #ff5200;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    flex-shrink: 0;
+}
+
+.user-avatar-img {
+
+    width: 60px;
+
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.user-name {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #282c3f;
+}
+
+.user-location {
+
+    margin-top: 6px;
+
+    color: #686b78;
+
+    font-size: 15px;
+}
+
+.user-contact {
+
+    margin-top: 5px;
+
+    color: #8a8d97;
+
+    font-size: 14px;
+}
+
+/* =====================================
+            COMMON BUTTON
+====================================== */
+
+button {
+
+    transition: .25s;
+
+    font-family: inherit;
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+}
+
+/* =====================================
+            LINKS
+====================================== */
+
+a {
+
+    transition: .25s;
+}
+
+a:hover {
+
+    color: #ff5200;
+}
+
+/* =====================================
+        RESTAURANT CARD DETAILS
+====================================== */
+
+.res-card h4:nth-child(3) {
+
+    color: #ff5200;
+
+    font-weight: 700;
+}
+
+.res-card h4:nth-child(4) {
+
+    color: #2d2d2d;
+
+    font-weight: 600;
+}
+
+.res-card h4:last-child {
+
+    color: #777;
+}
+
+/* =====================================
+        PAGE ANIMATION
+====================================== */
+
+@keyframes pageLoad {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+.body {
+
+    animation: pageLoad .5s ease;
+}
+
+/* =====================================
+        RESPONSIVE DESIGN
+====================================== */
+
+@media (max-width: 900px) {
+
+    .header {
+
+        padding: 15px 25px;
+
+        flex-wrap: wrap;
+
+        height: auto;
+    }
+
+    .nav-items ul {
+
+        gap: 18px;
+
+        font-size: 16px;
+    }
+
+    .search input {
+
+        width: 220px;
+    }
+
+    .menu {
+
+        padding: 12px;
+    }
+
+    .menu-header {
+
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header {
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 18px;
+    }
+
+    .nav-items ul {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .filter {
+
+        justify-content: center;
+
+        margin: 20px;
+    }
+
+    .search {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .search input {
+
+        width: 100%;
+    }
+
+    .res-container {
+
+        padding: 15px;
+    }
+
+    .res-card {
+
+        width: 95%;
+    }
+
+    .menu-item {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .item-left {
+
+        width: 100%;
+    }
+
+    .item-right {
+
+        width: 100%;
+
+        justify-content: flex-end;
+    }
+
+    .about-wrapper {
+
+        margin: 25px 15px;
+
+        padding: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .logo {
+
+        width: 110px;
+    }
+
+    .menu-header h1 {
+
+        font-size: 28px;
+    }
+
+    .menu-title {
+
+        font-size: 24px;
+    }
+
+    .item-left h3 {
+
+        font-size: 17px;
+    }
+
+    .add-btn {
+
+        width: 100%;
+    }
+}
+
+/* =====================================
+            SELECTION
+====================================== */
+
+::selection {
+
+    background: #ff5200;
+
+    color: white;
+}
+
+/* =====================================
+            SMOOTH SCROLL
+====================================== */
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+.logo {
+  height: 80px;
+  width: auto
 }

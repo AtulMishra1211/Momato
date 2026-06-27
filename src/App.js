@@ -10,11 +10,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // import Grocery from "./components/Grocery";
 import {lazy, Suspense} from "react";
 import UserContext from "./utils/UserContext";
-
-
- 
-
-
+import appStore from "./utils/appStore";
+import { Provider } from "react-redux";
 
 const AppLayout =()=> {
 
@@ -31,19 +28,20 @@ const AppLayout =()=> {
    },[])
 
 
-    
-
-    
-
-
-
     return (
+   //providing the redux store to our app, wrapping our entire app in Provider
+    <Provider store = {appStore}>
+
+    {/*This below is our app wrap in context --- nothing to do with redux/**/}
     <UserContext.Provider value = {{loggedInUser:userName, setUserName}}>
     <div className="app">
     <Header/>
     <Outlet/>
     </div>
     </UserContext.Provider>
+
+
+    </Provider>
     );
     
 }
